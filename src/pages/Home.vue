@@ -9,10 +9,12 @@ const data = ref(null);
 onMounted(async () => {
   const response = await axios.get("https://fakestoreapi.com/products");
   data.value = response.data;
-  telegram.MainBottom.text= "Main Btn";
-  telegram.MainBottom.onClick(() => {
-    alert('main btn clicked');
-  })
+  telegram.MainButton.show();
+  telegram.MainButton.enabled();
+  telegram.MainButton.text = "Main Btn";
+  telegram.MainButton.onClick(() => {
+    alert("main btn clicked");
+  });
 });
 </script>
 
