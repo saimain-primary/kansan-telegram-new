@@ -13,21 +13,25 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      meta: { transition: "slide-right" },
     },
     {
       path: "/:id",
       name: "post_detail",
       component: PostDetailView,
+      meta: { transition: "slide-right" },
     },
     {
       path: "/:id/buy-tickets",
       name: "buy_tickets",
       component: BuyTicketView,
+      meta: { transition: "slide-right" },
     },
     {
       path: "/checkout",
       name: "checkout",
       component: CheckoutView,
+      meta: { transition: "slide-right" },
     },
   ],
 });

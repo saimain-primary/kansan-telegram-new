@@ -20,7 +20,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="mb-5" v-if="loading">
+  <div class="p-4">
+    <div class="mb-5" v-if="loading">
     <div
       class="bg-gradient-to-r from-transparent -translate-x-full animate-[shimmer_2s_infinite] via-rose-100/10 to-transparent"
     ></div>
@@ -71,5 +72,6 @@ onMounted(async () => {
     >
       လက်မှတ်ဝယ်ယူမည်
     </router-link>
+  </div>
   </div>
 </template>

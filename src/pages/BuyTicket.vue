@@ -54,6 +54,13 @@ function changePage(page) {
   currentPage.value = page;
 }
 
+const handlerCheckout = () => {
+  router.push({
+    path: "/checkout",
+    query: { nums: selectedNumbers.value.join(",") },
+  });
+};
+
 watch(selectedNumbers.value, async (val) => {
   telegram.MainButton.show();
   telegram.MainButton.text = "လက်မှတ်ဝယ်ယူမည်";
@@ -79,7 +86,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="p-4">
     <div class="bg-neutral-800 mb-3 p-4 rounded text-gray-100">
       <div class="mb-5 flex items-center">
         <h3 class="font-medium font-padauk tracking-wide text-gray-100 text-sm">
@@ -157,5 +164,11 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
+    <!-- <button
+      @click="handlerCheckout"
+      class="p-4 bg-red-500 w-full rounded shadow"
+    >
+      Checkout
+    </button> -->
   </div>
 </template>

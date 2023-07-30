@@ -26,11 +26,16 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
-    class="bg-white dark:bg-neutral-900 p-4 text-neutral-900 dark:text-white min-h-screen"
-  >
-    <RouterView />
-  </div>
+  <router-view v-slot="{ Component, route }">
+    <!-- Use any custom transition and  to `fade` -->
+    <transition :name="route.meta.transition || 'fade'" appear>
+      <div
+        class="bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white min-h-screen"
+      >
+        <component :is="Component" />
+      </div>
+    </transition>
+  </router-view>
 </template>
 
 <style scoped>
