@@ -9,6 +9,7 @@ const data = ref(null);
 onMounted(async () => {
   const response = await axios.get("https://fakestoreapi.com/products");
   data.value = response.data;
+  alert("testing");
 });
 </script>
 
