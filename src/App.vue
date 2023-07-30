@@ -1,12 +1,19 @@
 <script setup>
 import { onMounted } from "vue";
-import { RouterView } from "vue-router";
+import { RouterView, useRoute } from "vue-router";
 const telegram = window.Telegram.WebApp;
+const route = useRoute();
 onMounted(async () => {
-  console.log(telegram.initData);
-  console.log(telegram.version);
-  console.log(telegram.BackButton);
-  telegram.BackButton.isVisible  = true;
+  if (route.fullPath !== "/") {
+    telegram.BackButton.isVisible = true;
+    telegram.BackButton.onClick = () => {
+      alert("clicked back");
+    };
+    telegram.BackButton.offClick = () => {
+      alert("no clicked back");
+    };
+  }
+
   telegram.ready();
 });
 </script>

@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from "vue";
 import axios from "axios";
 import { useRoute } from "vue-router";
 import { RouterLink } from "vue-router";
-
+const telegram = window.Telegram.WebApp;
 const route = useRoute();
 
 const perPage = 100;
@@ -52,7 +52,9 @@ function changePage(page) {
   currentPage.value = page;
 }
 
-onMounted(async () => {});
+onMounted(async () => {
+  telegram.isClosingConfirmationEnabled = true;
+});
 </script>
 
 <template>

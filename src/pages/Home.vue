@@ -13,7 +13,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  {{ telegram.version }}
+  <div class="mb-5 text-xs font-mono">
+    <p>Telegram Web App API Version : {{ telegram.version }}</p>
+  </div>
   <MasonryWall
     v-if="data"
     :items="data"
