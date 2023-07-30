@@ -15,6 +15,8 @@ onMounted(async () => {
   telegram.themeParams.button_text_color = "#f3f4f6";
   telegram.ready();
 
+  themeColor.value = "dark";
+
   if (themeColor.value === "dark") {
     isDark.value = true;
   } else {
@@ -24,7 +26,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="bg-white dark:bg-gray-800 p-4 dark:text-white min-h-screen">
+  <div class="bg-white dark:bg-neutral-900 p-4 text-neutral-900 dark:text-white min-h-screen">
     <RouterView />
   </div>
 </template>

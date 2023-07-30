@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="rounded-md shadow bg-white dark:bg-gray-900 p-4 h-100">
+  <div class="rounded-md shadow bg-white dark:bg-neutral-800 p-4 h-100">
     <span class="bg-fuchsia-600 text-white p-1 rounded-md font-medium text-xs absolute">
       (၆) ကြိမ်မြောက်
     </span>

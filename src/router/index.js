@@ -25,10 +25,10 @@ const router = createRouter({
       component: BuyTicketView,
     },
     {
-        path: "/checkout",
-        name: "checkout",
-        component: CheckoutView,
-    }
+      path: "/checkout",
+      name: "checkout",
+      component: CheckoutView,
+    },
   ],
 });
 

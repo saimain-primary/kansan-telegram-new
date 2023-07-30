@@ -54,18 +54,14 @@ function changePage(page) {
   currentPage.value = page;
 }
 
-const checkoutHandler = () => {
-  router.push({
-    path: "/checkout",
-    query: { nums: selectedNumbers.value.join(",") },
-  });
-};
-
 watch(selectedNumbers.value, async (val) => {
   telegram.MainButton.show();
   telegram.MainButton.text = "လက်မှတ်ဝယ်ယူမည်";
   telegram.MainButton.onClick(() => {
-    alert("main btn clicked");
+    router.push({
+      path: "/checkout",
+      query: { nums: selectedNumbers.value.join(",") },
+    });
   });
   telegram.MainButton.offClick(() => {
     alert("main btn off ");
@@ -84,7 +80,7 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <div class="bg-gray-900 mb-3 p-4 rounded text-gray-100">
+    <div class="bg-neutral-800 mb-3 p-4 rounded text-gray-100">
       <div class="mb-5 flex items-center">
         <h3 class="font-medium font-padauk tracking-wide text-gray-100 text-sm">
           Lucky နံပါတ်များ ရွေးချယ်ရန်
@@ -97,7 +93,7 @@ onUnmounted(() => {
           type="number"
           max="999"
           min="000"
-          class="w-full bg-gray-800 p-4 rounded appearance-none text-sm focus:outline-none focus:border-0"
+          class="w-full bg-neutral-900 p-4 rounded appearance-none text-sm focus:outline-none focus:border-0"
         />
       </div>
       <div class="text-center grid grid-cols-4 gap-2 pt-4">
@@ -105,8 +101,8 @@ onUnmounted(() => {
           v-for="page in totalPages"
           :key="page"
           @click="changePage(page.value)"
-          class="text-xs py-1 font-padauk leading-5 border-blue-800 border hover:bg-blue-800 hover:text-white text-gray-100 rounded"
-          :class="{ 'bg-blue-800 text-white': currentPage === page.value }"
+          class="text-xs py-1 font-padauk leading-5 border-neutral-800 border hover:bg-neutral-900 hover:text-white text-gray-100 rounded bg-neutral-700"
+          :class="{ 'bg-neutral-800 text-white': currentPage === page.value }"
         >
           {{ page.text }}
         </button>
@@ -122,7 +118,7 @@ onUnmounted(() => {
         </button>
       </div>
     </div>
-    <div class="bg-gray-900 mb-3 p-4 rounded text-gray-100">
+    <div class="bg-neutral-800 mb-3 p-4 rounded text-gray-100">
       <div class="mb-3 gap-1 flex items-center">
         <h3 class="font-medium font-padauk tracking-wide text-gray-100 text-sm">
           ရွေးချယ်ထားသော Lucky နံပါတ်များ
@@ -162,8 +158,5 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
-    <button @click.prevent="checkoutHandler" class="p-4 w-full bg-red-500">
-      Checkout
-    </button>
   </div>
 </template>
