@@ -29,12 +29,12 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   if (to.fullPath !== "/") {
     telegram.BackButton.isVisible = true;
-    telegram.BackButton.onClick = () => {
+    telegram.BackButton.onClick(() => {
       alert("clicked back");
-    };
-    telegram.BackButton.offClick = () => {
+    });
+    telegram.BackButton.offClick(() => {
       alert("no clicked back");
-    };
+    });
   }
   next();
 });

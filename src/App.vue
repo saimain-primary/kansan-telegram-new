@@ -4,7 +4,6 @@ import { RouterView, useRoute } from "vue-router";
 const telegram = window.Telegram.WebApp;
 const route = useRoute();
 onMounted(async () => {
-  console.log("route", route.fullPath);
   telegram.ready();
 });
 </script>
