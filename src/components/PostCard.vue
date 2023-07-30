@@ -1,5 +1,7 @@
 <script setup>
+import { RouterLink } from "vue-router";
 const props = defineProps({
+  id: String | Number,
   description: String,
   title: String,
   image: String,
@@ -22,10 +24,11 @@ const props = defineProps({
       {{ description }}
     </p>
     <p class="mb-5 text-xs">‌ဈေးနှုန်း - {{ price }} ကျပ်</p>
-    <button
-      class="bg-blue-600 w-full py-4 rounded-md shadow text-sm hover:bg-blue-700 transition duration-200"
+    <router-link
+      :to="`/${id}`"
+      class="bg-blue-600 w-full inline-block text-center py-4 rounded-md shadow text-sm hover:bg-blue-700 transition duration-200"
     >
       အသေးစိတ်ကြည့်မည်
-    </button>
+    </router-link>
   </div>
 </template>
