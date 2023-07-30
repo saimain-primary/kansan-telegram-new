@@ -7,8 +7,8 @@ import MasonryWall from "@yeger/vue-masonry-wall";
 const telegram = window.Telegram.WebApp;
 const data = ref(null);
 onMounted(async () => {
+  telegram.enableClosingConfirmation();
   telegram.ready();
-
   const response = await axios.get("https://fakestoreapi.com/products");
   data.value = response.data;
 });
