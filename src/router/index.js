@@ -30,10 +30,7 @@ router.beforeEach(async (to, from, next) => {
   if (to.fullPath !== "/") {
     telegram.BackButton.isVisible = true;
     telegram.BackButton.onClick(() => {
-      alert("clicked back");
-    });
-    telegram.BackButton.offClick(() => {
-      alert("no clicked back");
+      router.go(-1);
     });
   }
   next();
