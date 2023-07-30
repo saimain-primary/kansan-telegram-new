@@ -1,11 +1,11 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import axios from "axios";
-import { useRoute } from "vue-router";
+import { routerKey, useRoute, useRouter } from "vue-router";
 import { RouterLink } from "vue-router";
 const telegram = window.Telegram.WebApp;
 const route = useRoute();
-
+const router = useRouter();
 const perPage = 100;
 const currentPage = ref(1);
 
@@ -53,6 +53,13 @@ function numberClass(number) {
 function changePage(page) {
   currentPage.value = page;
 }
+
+const checkoutHandler = () => {
+  router.push({
+    path: "/checkout",
+    query: { nums: selectedNumbers.value.join(",") },
+  });
+};
 
 watch(selectedNumbers.value, async (val) => {
   telegram.MainButton.show();
@@ -155,5 +162,8 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
+    <button @click.prevent="checkoutHandler" class="p-4 w-full bg-red-500">
+      Checkout
+    </button>
   </div>
 </template>

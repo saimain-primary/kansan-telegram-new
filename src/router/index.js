@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../pages/Home.vue";
 import PostDetailView from "../pages/PostDetail.vue";
 import BuyTicketView from "../pages/BuyTicket.vue";
+import CheckoutView from "../pages/Checkout.vue";
 
 const telegram = window.Telegram.WebApp;
 
@@ -23,6 +24,11 @@ const router = createRouter({
       name: "buy_tickets",
       component: BuyTicketView,
     },
+    {
+        path: "/checkout",
+        name: "checkout",
+        component: CheckoutView,
+    }
   ],
 });
 
