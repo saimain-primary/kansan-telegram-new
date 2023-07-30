@@ -1,0 +1,25 @@
+{
+  "name": "bot",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@yeger/vue-masonry-wall": "^4.2.1",
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "telegraf": "^4.12.2",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.6",
+    "vue-masonry-css": "^1.0.3"
+  }
+}
