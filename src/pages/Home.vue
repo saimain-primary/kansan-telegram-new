@@ -9,7 +9,21 @@ const data = ref(null);
 onMounted(async () => {
   const response = await axios.get("https://fakestoreapi.com/products");
   data.value = response.data;
-  alert("testing");
+  telegram.showPopup(
+    {
+      title: "abc",
+      message: "adaldsf",
+      buttons: [
+        {
+          id: "1",
+          text: "asdflasldfjs",
+        },
+      ],
+    },
+    () => {
+      alert("call back from popup");
+    }
+  );
 });
 </script>
 
