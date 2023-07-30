@@ -27,17 +27,17 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  if (to.fullPath !== "/") {
-    console.log('show back');
+  if (to.fullPath == "/") {
+    console.log("no show back");
+    telegram.BackButton.isVisible = false;
+    telegram.BackButton.hide();
+  } else {
+    console.log("show back");
     telegram.BackButton.isVisible = true;
     telegram.BackButton.show();
     telegram.BackButton.onClick(() => {
       router.go(-1);
     });
-  } else {
-    console.log('no show back');
-    telegram.BackButton.isVisible = false;
-    telegram.BackButton.hide();
   }
   next();
 });
