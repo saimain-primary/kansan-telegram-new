@@ -58,6 +58,9 @@ watch(selectedNumbers.value, async (val) => {
   telegram.MainButton.onClick(() => {
     alert("main btn clicked");
   });
+  telegram.MainButton.offClick(() => {
+    alert("main btn off ");
+  });
 });
 
 onMounted(async () => {
