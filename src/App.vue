@@ -26,7 +26,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="bg-white dark:bg-neutral-900 p-4 text-neutral-900 dark:text-white min-h-screen">
+  <div
+    class="bg-white dark:bg-neutral-800 p-4 text-neutral-800 dark:text-white min-h-screen"
+  >
     <RouterView />
   </div>
 </template>

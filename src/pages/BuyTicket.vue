@@ -101,8 +101,7 @@ onUnmounted(() => {
           v-for="page in totalPages"
           :key="page"
           @click="changePage(page.value)"
-          class="text-xs py-1 font-padauk leading-5 border-neutral-800 border hover:bg-neutral-900 hover:text-white text-gray-100 rounded bg-neutral-700"
-          :class="{ 'bg-neutral-800 text-white': currentPage === page.value }"
+          class="text-xs py-1 font-padauk leading-5 border-neutral-800 border text-white rounded bg-neutral-700"
         >
           {{ page.text }}
         </button>
