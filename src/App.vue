@@ -15,8 +15,6 @@ onMounted(async () => {
   telegram.themeParams.button_text_color = "#f3f4f6";
   telegram.ready();
 
-  themeColor.value = "dark";
-
   if (themeColor.value === "dark") {
     isDark.value = true;
   } else {
