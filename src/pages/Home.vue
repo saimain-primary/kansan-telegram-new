@@ -3,7 +3,7 @@ import { onMounted, ref } from "vue";
 import PostCard from "../components/PostCard.vue";
 import axios from "axios";
 import MasonryWall from "@yeger/vue-masonry-wall";
-
+const telegram = window.Telegram.WebApp;
 const data = ref(null);
 
 onMounted(async () => {
@@ -13,6 +13,7 @@ onMounted(async () => {
 </script>
 
 <template>
+  {{ telegram.version }}
   <MasonryWall
     v-if="data"
     :items="data"
