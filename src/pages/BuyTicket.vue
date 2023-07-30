@@ -51,6 +51,7 @@ function numberClass(number) {
 }
 
 function changePage(page) {
+  telegram.HapticFeedback.impactOccurred("light");
   currentPage.value = page;
 }
 
@@ -88,6 +89,11 @@ onUnmounted(() => {
 <template>
   <div class="p-4">
     <div class="bg-neutral-800 mb-3 p-4 rounded text-gray-100">
+      <img
+        src="../assets/robottwo.gif"
+        class="w-28 h-28 mx-auto mb-10"
+        alt=""
+      />
       <div class="mb-5 flex items-center">
         <h3 class="font-medium font-padauk tracking-wide text-gray-100 text-sm">
           Lucky နံပါတ်များ ရွေးချယ်ရန်
