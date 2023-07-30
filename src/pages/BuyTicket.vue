@@ -62,6 +62,7 @@ watch(selectedNumbers, async (newQuestion, oldQuestion) => {
 });
 
 onMounted(async () => {
+  console.log(telegram);
   telegram.isClosingConfirmationEnabled = true;
 });
 </script>
