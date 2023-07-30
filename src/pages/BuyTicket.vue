@@ -52,8 +52,8 @@ function changePage(page) {
   currentPage.value = page;
 }
 
-watch(selectedNumbers.value, async (newQuestion, oldQuestion) => {
-  console.log("nn", newQuestion);
+watch(selectedNumbers.value, async (val) => {
+  console.log(val);
   telegram.MainButton.show();
   telegram.MainButton.text = "Main Btn";
   telegram.MainButton.onClick(() => {
