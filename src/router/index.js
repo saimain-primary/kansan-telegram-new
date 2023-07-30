@@ -32,6 +32,8 @@ router.beforeEach(async (to, from, next) => {
     telegram.BackButton.onClick(() => {
       router.go(-1);
     });
+  } else {
+    telegram.BackButton.isVisible = false;
   }
   next();
 });
