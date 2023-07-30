@@ -164,11 +164,12 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
-    <!-- <button
+    <button
+      v-if="selectedNumbers.length > 0"
       @click="handlerCheckout"
       class="p-4 bg-red-500 w-full rounded shadow"
     >
       Checkout
-    </button> -->
+    </button>
   </div>
 </template>

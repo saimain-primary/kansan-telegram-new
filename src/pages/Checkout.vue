@@ -42,13 +42,13 @@ onUnmounted(() => {
         </h3>
       </div>
       <div class="grid grid-cols-5 gap-3 items-start justify-center">
-        <div v-for="item in data" :key="item">
-          <button
-            class="px-7 py-4 w-full text-center bg-neutral-900 rounded-md"
-          >
-            {{ item }}
-          </button>
-        </div>
+        <button
+          v-for="item in data"
+          :key="item"
+          class="px-4 py-2 w-full text-center bg-neutral-900 rounded-md"
+        >
+          {{ item }}
+        </button>
       </div>
     </div>
     <div class="bg-neutral-800 mb-5 text-gray-100 py-8 px-4">
