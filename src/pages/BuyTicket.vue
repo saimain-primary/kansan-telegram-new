@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import axios from "axios";
 import { useRoute } from "vue-router";
 import { RouterLink } from "vue-router";
@@ -51,6 +51,15 @@ function numberClass(number) {
 function changePage(page) {
   currentPage.value = page;
 }
+
+watch(selectedNumbers, async (newQuestion, oldQuestion) => {
+  console.log("nn", newQuestion);
+  telegram.MainButton.show();
+  telegram.MainButton.text = "Main Btn";
+  telegram.MainButton.onClick(() => {
+    alert("main btn clicked");
+  });
+});
 
 onMounted(async () => {
   telegram.isClosingConfirmationEnabled = true;
