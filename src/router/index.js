@@ -37,16 +37,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  if (to.fullPath === "/") {
-    telegram.BackButton.hide();
-    telegram.BackButton.isVisible = false;
-  } else {
-    telegram.BackButton.isVisible = true;
-    telegram.BackButton.show();
-    telegram.BackButton.onClick(() => {
-      router.go(-1);
-    });
-  }
+ 
   next();
 });
 

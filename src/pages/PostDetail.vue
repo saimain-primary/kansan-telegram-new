@@ -3,12 +3,18 @@ import { onMounted, ref } from "vue";
 import axios from "axios";
 import { useRoute } from "vue-router";
 import { RouterLink } from "vue-router";
+const telegram = window.Telegram.WebApp;
 
 const route = useRoute();
 const data = ref(null);
 const loading = ref(false);
 
 onMounted(async () => {
+  telegram.BackButton.isVisible = true;
+  telegram.BackButton.show();
+  telegram.BackButton.onClick(() => {
+    router.go(-1);
+  });
   loading.value = true;
   const response = await axios.get(
     "https://fakestoreapi.com/products/" + route.params.id

@@ -58,7 +58,7 @@ function changePage(page) {
 const handlerCheckout = () => {
   router.push({
     path: "/checkout",
-    query: { nums: selectedNumbers.value.join(",") },
+    query: { product: route.params.id, nums: selectedNumbers.value.join(",") },
   });
 };
 
@@ -68,7 +68,10 @@ watch(selectedNumbers.value, async (val) => {
   telegram.MainButton.onClick(() => {
     router.push({
       path: "/checkout",
-      query: { nums: selectedNumbers.value.join(",") },
+      query: {
+        product: route.params.id,
+        nums: selectedNumbers.value.join(","),
+      },
     });
   });
   telegram.MainButton.offClick(() => {
@@ -77,6 +80,12 @@ watch(selectedNumbers.value, async (val) => {
 });
 
 onMounted(async () => {
+  telegram.BackButton.isVisible = true;
+  telegram.BackButton.show();
+  telegram.BackButton.onClick(() => {
+    router.go(-1);
+  });
+
   console.log(telegram);
   telegram.isClosingConfirmationEnabled = true;
 });

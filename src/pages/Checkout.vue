@@ -5,13 +5,23 @@ const telegram = window.Telegram.WebApp;
 const route = useRoute();
 const router = useRouter();
 const data = ref(null);
+const productId = ref(null);
 
 const handlePayment = () => {};
 
 onMounted(() => {
   console.log(route.query.nums);
   const queryNums = route.query.nums;
+  const pId = route.query.product;
+
   data.value = queryNums ? queryNums.split(",") : null;
+  productId.value = pId;
+
+  telegram.BackButton.isVisible = true;
+  telegram.BackButton.show();
+  telegram.BackButton.onClick(() => {
+    router.push({ path: `/${pId}/buy-tickets` });
+  });
 
   telegram.MainButton.show();
   telegram.MainButton.text = "ငွေပေး‌ချေမည်";

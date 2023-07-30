@@ -15,6 +15,8 @@ const fetchData = async () => {
   loading.value = false;
 };
 onMounted(async () => {
+  telegram.BackButton.hide();
+  telegram.BackButton.isVisible = false;
   await fetchData();
 });
 
