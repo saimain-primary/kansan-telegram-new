@@ -12,7 +12,6 @@ onMounted(async () => {
   const response = await axios.get("https://fakestoreapi.com/products");
   data.value = response.data;
   loading.value = false;
-
 });
 </script>
 

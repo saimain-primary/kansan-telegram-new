@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import axios from "axios";
 import { useRoute } from "vue-router";
 import { RouterLink } from "vue-router";
@@ -68,6 +68,10 @@ watch(selectedNumbers.value, async (val) => {
 onMounted(async () => {
   console.log(telegram);
   telegram.isClosingConfirmationEnabled = true;
+});
+
+onUnmounted(() => {
+  telegram.MainButton.hide();
 });
 </script>
 
