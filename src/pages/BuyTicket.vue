@@ -131,9 +131,9 @@ onMounted(async () => {
             v-for="number in selectedNumbers"
             @click.prevent="handlerSelectNumber(number)"
             :key="number"
-            class="text-center py-1 rounded bg-blue-100 border relative border-blue-800"
+            class="text-center py-1 rounded bg-blue-800 border relative border-blue-800"
           >
-            <span class="text-sm text-blue-800">{{ number }}</span>
+            <span class="text-sm text-white">{{ number }}</span>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"

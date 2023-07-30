@@ -13,7 +13,6 @@ onMounted(async () => {
   data.value = response.data;
   loading.value = false;
 
-  console.log(telegram.themeParams);
 });
 </script>
 
