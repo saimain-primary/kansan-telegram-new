@@ -46,7 +46,7 @@ onMounted(async () => {
       alt=""
       class="object-fill h-56 w-100 mx-auto rounded mb-10"
     />
-    <p class="font-medium mb-1 text-lg">{{ data.title }}</p>
+    <p class="font-medium mb-1 text-lg dark:text-white">{{ data.title }}</p>
     <p class="mb-3 text-base font-normal">
       {{ data.description }}
     </p>
