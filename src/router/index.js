@@ -3,6 +3,8 @@ import HomeView from "../pages/Home.vue";
 import PostDetailView from "../pages/PostDetail.vue";
 import BuyTicketView from "../pages/BuyTicket.vue";
 
+const telegram = window.Telegram.WebApp;
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL),
   routes: [
@@ -22,6 +24,19 @@ const router = createRouter({
       component: BuyTicketView,
     },
   ],
+});
+
+router.beforeEach(async (to, from, next) => {
+  if (to.fullPath !== "/") {
+    telegram.BackButton.isVisible = true;
+    telegram.BackButton.onClick = () => {
+      alert("clicked back");
+    };
+    telegram.BackButton.offClick = () => {
+      alert("no clicked back");
+    };
+  }
+  next();
 });
 
 export default router;

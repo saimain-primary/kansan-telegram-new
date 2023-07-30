@@ -42,7 +42,7 @@ onMounted(async () => {
       dignissimos fugiat numquam asperiores.
     </p>
     <router-link
-      :to="`/${id}/buy-tickets`"
+      :to="`/${data.id}/buy-tickets`"
       class="bg-blue-600 w-full inline-block text-center py-4 rounded-md shadow text-sm hover:bg-blue-700 transition duration-200"
     >
       လက်မှတ်ဝယ်ယူမည်
