@@ -20,7 +20,12 @@ onMounted(() => {
   telegram.BackButton.isVisible = true;
   telegram.BackButton.show();
   telegram.BackButton.onClick(() => {
-    router.push({ path: `/${pId}/buy-tickets` });
+    router.push({
+      path: `/${pId}/buy-tickets`,
+      query: {
+        product: data.value ? data.value.join(",") : "",
+      },
+    });
   });
 
   telegram.MainButton.show();

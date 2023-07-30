@@ -86,6 +86,10 @@ onMounted(async () => {
     router.go(-1);
   });
 
+  if (route.query.product) {
+    selectedNumbers.value = route.query.product.split(",");
+  }
+
   console.log(telegram);
   telegram.isClosingConfirmationEnabled = true;
 });
