@@ -26,6 +26,7 @@ const totalPages = computed(() => {
 const selectedNumbers = ref([]);
 
 const handlerSelectNumber = (num) => {
+  
   if (selectedNumbers.value.includes(num)) {
     selectedNumbers.value = selectedNumbers.value.filter((n) => n !== num);
   } else {
