@@ -7,26 +7,6 @@ const telegram = window.Telegram.WebApp;
 const data = ref(null);
 const loading = ref(false);
 
-const testFun = () => {
-  telegram.HapticFeedback.impactOccurred("light");
-};
-
-const testFun2 = () => {
-  telegram.HapticFeedback.impactOccurred("medium");
-};
-
-const testFun3 = () => {
-  telegram.HapticFeedback.impactOccurred("heavy");
-};
-
-const testFun4 = () => {
-  telegram.HapticFeedback.impactOccurred("rigid");
-};
-
-const testFun5 = () => {
-  telegram.HapticFeedback.impactOccurred("soft");
-};
-
 onMounted(async () => {
   loading.value = true;
   const response = await axios.get("https://fakestoreapi.com/products");
@@ -38,11 +18,6 @@ onMounted(async () => {
 <template>
   <div class="mb-5 text-xs font-mono text-center">
     <p class="mb-5">Telegram Web App API Version : {{ telegram.version }}</p>
-    <button class="p-2 border" @click="testFun">Click Vib</button>
-    <button class="p-2 border" @click="testFun2">Click Vib 2</button>
-    <button class="p-2 border" @click="testFun3">Click Vib 3</button>
-    <button class="p-2 border" @click="testFun4">Click Vib 4</button>
-    <button class="p-2 border" @click="testFun5">Click Vib 5</button>
   </div>
 
   <div v-if="loading">
